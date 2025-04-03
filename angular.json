@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "b-town": {
+    "Task-Buddy": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -14,7 +14,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
-              "base": "dist/b-town"
+              "base": "dist/Task-Buddy"
             },
             "index": "src/index.html",
             "polyfills": [
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "b-town:build:production"
+              "buildTarget": "Task-Buddy:build:production"
             },
             "development": {
-              "buildTarget": "b-town:build:development"
+              "buildTarget": "Task-Buddy:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "b-town:build"
+            "buildTarget": "Task-Buddy:build"
           }
         },
         "test": {

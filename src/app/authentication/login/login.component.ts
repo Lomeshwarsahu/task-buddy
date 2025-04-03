@@ -89,13 +89,14 @@ export class LoginComponent {
           //  debugger
           //  throw err;
           console.log(err);
-          this.toastr.error("Please Check userId and password!",'Error');
+          alert("Please Check userId and password!");
+          // this.toastr.error("Please Check userId and password!",'Error');
           //  alert(err.message)
          }
        );
       } else 
-      //alert('Something went wrong, please try again')
-       this.toastr.error('Something went wrong, please try again!', 'Error!');
+      alert('Something went wrong, please try again')
+      //  this.toastr.error('Something went wrong, please try again!', 'Error!');
     }
     catch(err:any){
       throw err;
