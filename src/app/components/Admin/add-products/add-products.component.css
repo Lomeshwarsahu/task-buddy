@@ -1,0 +1,10 @@
+.container-fluid {
+    padding: 20px;
+  }
+
+  img {
+    border: 2px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }

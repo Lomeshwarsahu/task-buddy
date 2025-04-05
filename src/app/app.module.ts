@@ -4,11 +4,10 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // import { NavbarComponent } from './navbar/navbar.component';
-import { provideHttpClient } from '@angular/common/http'; // ✅ Import this
+import { HTTP_INTERCEPTORS, provideHttpClient,withInterceptors } from '@angular/common/http'; // ✅ Import this
 import {ToastrModule} from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // ✅ Required
-
-
+import { tokenInterceptor } from './guards/token.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +17,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
     BrowserModule,
     AppRoutingModule,FormsModule,ReactiveFormsModule,ToastrModule.forRoot(),BrowserAnimationsModule
   ],
-  providers: [provideHttpClient() ],
+  providers: [
+    // provideHttpClient(),
+    provideHttpClient(
+      withInterceptors([tokenInterceptor])
+    ),
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

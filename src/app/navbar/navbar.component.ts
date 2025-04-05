@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { AuthServiceService } from '../guards/auth-service.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { NgFor, CommonModule, NgStyle } from '@angular/common';
 
 @Component({
     selector: 'app-navbar',
     standalone: true, // ✅ Make it a standalone component
-    imports: [NgFor,CommonModule, NgStyle,],
+    imports: [NgFor,CommonModule, NgStyle, RouterModule],
     // 
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.css'],
@@ -14,6 +14,7 @@ import { NgFor, CommonModule, NgStyle } from '@angular/common';
 export class NavbarComponent {
   isDarkMode = false;
   userName:any;
+  Role:any;
   constructor(public authService: AuthServiceService, private router: Router) {}
   toggleTheme() {
     this.isDarkMode = !this.isDarkMode;
@@ -25,6 +26,8 @@ export class NavbarComponent {
   ngOnInit() {
     // var User = JSON.parse(localStorage.getItem('currentUser') || '{}')
     this.userName = localStorage.getItem('userName');
+    this.Role = localStorage.getItem('roleName');
+    // alert(this.Role);
     // var User=res.user;
     // {"user":{"userName
     // console.log(userName);

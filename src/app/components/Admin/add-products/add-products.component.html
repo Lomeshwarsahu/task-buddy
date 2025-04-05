@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<div class="card shadow">
+    <div class="card-body">
+      <div class="container-fluid border rounded p-2 mt-0">
+        <form [formGroup]="AddProductFrm" (ngSubmit)="onSubmit()">
+          <div class="row mb-2">
+          <div class="col">
+          <div data-mdb-input-init class="form-outline mb-3">
+            <input type="text" id="ProductsName" class="form-control"  formControlName="productName" />
+            <label class="form-label" for="ProductsName">Products Name</label>
+          </div>
+          <div data-mdb-input-init class="form-outline mb-3">
+            <input type="text" id="Description" class="form-control"  formControlName="productDescription" />
+            <label class="form-label" for="Description">Products Description</label>
+          </div>
+          <div data-mdb-input-init class="form-outline mb-3">
+            <input type="text" id="ActualPrice" class="form-control"  formControlName="productActualPrice" />
+            <label class="form-label" for="Actualprice">Products Actual Price</label>
+          </div>
+          <div data-mdb-input-init class="form-outline mb-3">
+            <input type="text" id="Discounted" class="form-control"  formControlName="productDiscountedPrice" />
+            <label class="form-label" for="Discounted">Products Discounted Price</label>
+          </div>
+        </div>
+        <!-- <div class="col border rounded p-0 m-1">
+        <div data-mdb-input-init class="form-outline mb-3">
+          <input type="file" id="image" accept="image/*" name="image"  class="form-control" />
+          <label class="form-label" for="Discounted">Upload Images</label>
+        </div>
+       </div> -->
+       <div class="col border rounded p-0 m-1">
+        <div data-mdb-input-init class="form-outline mb-3">
+          <input type="file" id="image" accept="image/*" name="image" class="form-control" (change)="onFileSelected($event)" />
+          <label class="form-label" for="image">Upload Images</label>
+        </div>
+        <div *ngIf="imageUrl" class="text-center">
+          <img [src]="imageUrl" alt="Uploaded Image" class="img-fluid rounded border" style="max-width: 200px; max-height: 200px;">
+        </div>
+      </div>
+        </div>
+          <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block m-1">Add Product</button>
+          <button data-mdb-ripple-init type="button" class="btn btn-success btn-block m-1">Update</button>
+          <button data-mdb-ripple-init type="button" class="btn btn-danger btn-block m-1">Delete</button>
+        </form>
+      </div>
+  
+    </div>
+  
+  </div>

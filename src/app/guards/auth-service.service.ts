@@ -16,7 +16,14 @@ export class AuthServiceService {
   login(token: string) {
     localStorage.setItem('authToken', token);
   }
-
+   getToken() {
+    return localStorage.getItem('authToken');
+    
+  }
+  // getToken(): string | null {
+  //   return JSON.parse(localStorage.getItem('authToken')!);
+    
+  // }
   // ✅ Logout: Remove token from localStorage
   logout() {
     localStorage.removeItem('authToken');

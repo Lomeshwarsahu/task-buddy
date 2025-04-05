@@ -11,7 +11,8 @@ export const Base = {
     webAppUrl: 'https://bihav.co.in',
     // https://rangkar-1.onrender.com
 
-    baseUrl: 'https://rangkar-1.onrender.com/',
+    // baseUrl: 'https://rangkar-1.onrender.com/',
+    baseUrl: '   https://task-buddy-ylrx.onrender.com/',
     // baseUrl: 'http://producttrackingapi.shivaminfosoft.in/api/',
     userImgUrl: 'http://producttrackingapi.shivaminfosoft.in/Uploads/Users',
 

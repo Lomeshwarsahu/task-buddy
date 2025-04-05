@@ -66,7 +66,8 @@ export class LoginComponent {
             // localStorage.setItem("ltn", JSON.stringify(res.token));
             switch (res.user.role[0].roleName) {
               case 'Admin': {
-                this.router.navigate(['/dashboard']);
+                alert("Admin");
+                this.router.navigate(['/admindashboard']);
                 // this.router.navigate(['/admin']);
                 break;
               }

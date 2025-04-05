@@ -9,11 +9,31 @@ import { Router } from '@angular/router';
     standalone: false
 })
 export class AppComponent {
-  title = 'B-Town';
+  isDarkMode = false;
+  userName:any;
   constructor(public authService: AuthServiceService, private router: Router) {}
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+    document.body.classList.toggle('bg-dark', this.isDarkMode);
+    document.body.classList.toggle('text-light', this.isDarkMode);
+    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
+  }
 
-  // logout() {
-  //   this.authService.logout();
-  //   this.router.navigate(['/']);
-  // }
+  ngOnInit() {
+    // var User = JSON.parse(localStorage.getItem('currentUser') || '{}')
+    this.userName = localStorage.getItem('userName');
+    // var User=res.user;
+    // {"user":{"userName
+    // console.log(userName);
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      this.isDarkMode = savedTheme === 'dark';
+      document.body.classList.toggle('bg-dark', this.isDarkMode);
+      document.body.classList.toggle('text-light', this.isDarkMode);
+    }
+  }
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/']);
+  }
 }
